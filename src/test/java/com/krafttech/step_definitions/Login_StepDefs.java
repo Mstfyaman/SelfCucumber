@@ -37,4 +37,10 @@ public class Login_StepDefs {
     @Given("The user is on the Login page")
     public void theUserIsOnTheLoginPage() {
     }
+
+    @When("The user enters Rosa credentials")
+    public void the_user_enters_rosa_credentials() {
+
+    }
+
 }
