@@ -5,6 +5,8 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 
+import java.util.List;
+
 public class ProfilePage extends BasePage{
 
   //  WebDriver driver;
@@ -80,6 +82,12 @@ public class ProfilePage extends BasePage{
 
     @FindBy(xpath = "//input[@id='email']")
     public WebElement profilEmail_loc;
+
+    @FindBy(xpath = "//a[@class='nav-link collapsed']")
+    public List<WebElement> profileOptions;
+
+    @FindBy( xpath = "//button[@class='nav-link active']")
+    public WebElement overview;
 
 
 

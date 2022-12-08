@@ -6,6 +6,8 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 
+import java.util.List;
+
 public class DashboardPage extends BasePage{
 
     @FindBy(xpath = "//h1[.='Dashboard']")
@@ -38,8 +40,14 @@ public class DashboardPage extends BasePage{
     @FindBy(xpath = "//span[.='Modal']")
     public WebElement moduleLocator;
 
+    @FindBy(xpath = "//li[@class='nav-item dropdown']")
+    public List<WebElement> moduleLocator2;
+    //li[@class='nav-item dropdown']
+    //   li[class*='nav-item dropdown']
+
     @FindBy(xpath = "//a[@class='nav-link nav-profile d-flex align-items-center pe-0']")
     public WebElement getUserName;  // ( DDF )
+
 
 
 
@@ -47,6 +55,7 @@ public class DashboardPage extends BasePage{
         String Title=dashboardPageTitle.getText();
         return Title;
     }
+
 
     public String UsersNames(String name){
         String usernameLocator = "//h3[.='"+name+"']";

@@ -1,5 +1,6 @@
 package com.krafttech.step_definitions;
 
+import com.krafttech.pages.DashboardPage;
 import com.krafttech.pages.LoginPages;
 import com.krafttech.utilities.BrowserUtils;
 import com.krafttech.utilities.ConfigurationReader;
@@ -9,10 +10,13 @@ import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import org.junit.Assert;
 
+import java.util.Map;
+
 public class Login_StepDefs {
 
 
     LoginPages loginPages = new LoginPages();
+    DashboardPage dashboard= new DashboardPage();
 
 
     @Given("The user is on the login page")
@@ -76,7 +80,20 @@ public class Login_StepDefs {
     @When("User should input {string} and {string}")
     public void userShouldInputAnd(String email, String password) {
         loginPages.loginWithParameter(email,password);
+    }
 
+    @Then("User should input following credentials")
+    public void user_should_input_following_credentials(Map<String,String> userInfo) {
+
+        loginPages.loginWithParameter(userInfo.get("email"),userInfo.get("password"));
+        // nereden çektiğimize dikkat et. login.feature deki keyleri yazdık.
+
+        String actualName = dashboard.getUserName();
+        String exceptedName = userInfo.get("Name");
+
+        System.out.println("actualName = " + actualName);
+        System.out.println("exceptedName = " + exceptedName);
+        Assert.assertEquals(exceptedName,actualName);
     }
 
 
