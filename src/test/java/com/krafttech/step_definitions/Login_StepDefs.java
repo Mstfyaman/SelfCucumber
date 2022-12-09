@@ -62,9 +62,11 @@ public class Login_StepDefs {
     public void user_should_be_on_the_login_page() {
         Driver.get().get(ConfigurationReader.get("url"));
     }
+
     @When("User should input login information")
     public void user_should_input_login_information() {
         loginPages.loginUser();
+
     }
     @Then("User should be on home page")
     public void user_should_be_on_home_page() {

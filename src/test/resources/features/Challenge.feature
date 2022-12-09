@@ -11,7 +11,7 @@
      |Edit Profile|
      |Mustafa |
 
-   @wip
+
      Scenario: Login as User
        Given : The user is on the Login page
        When Gecerli kriterleri giris yapar

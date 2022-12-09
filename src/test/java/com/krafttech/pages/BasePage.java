@@ -5,6 +5,7 @@ import com.krafttech.utilities.Driver;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
 public abstract class BasePage {
@@ -13,6 +14,15 @@ public abstract class BasePage {
     public BasePage(){
         PageFactory.initElements(Driver.get(),this);
         driver= Driver.get();
+    }
+
+   @FindBy(xpath = "//span[.='Edit Profile']")
+   public WebElement tabMenu;
+
+    public void navigateToTab(String tabName){
+        driver=Driver.get();
+        driver.findElement(By.xpath("//nav//span[.='"+tabName+"']")).click();
+
     }
 
     public void navigateToModule(String tab, String module){

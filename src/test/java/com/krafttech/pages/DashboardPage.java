@@ -46,6 +46,15 @@ public class DashboardPage extends BasePage{
     @FindBy(xpath = "//a[@class='nav-link nav-profile d-flex align-items-center pe-0']")
     public WebElement getUserName;  // ( DDF )
 
+    @FindBy(xpath = "//li[.='Edit User Profile']")
+    public WebElement tag;
+
+    public String getHomeName(String homeName){
+       BrowserUtils.waitFor(1);
+        return  Driver.get().findElement(By.xpath("//li[text()='"+homeName+"']")).getText();
+
+    }
+
 
 
 

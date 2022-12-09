@@ -32,7 +32,5 @@ public class NavigationMenuStepDefs {
         }
 
 
-    @Then("go to Developers menu and get the text of Developer")
-    public void goToDevelopersMenuAndGetTheTextOfDeveloper() {
-    }
+
 }

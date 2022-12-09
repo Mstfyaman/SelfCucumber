@@ -4,6 +4,8 @@ import com.krafttech.utilities.ConfigurationReader;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 
+import java.security.cert.X509Certificate;
+
 public class LoginPages extends BasePage{
 
 
@@ -22,6 +24,12 @@ public class LoginPages extends BasePage{
 
     @FindBy(xpath = "//*[contains(text(),'Email address or password is incorrect. Please check')]")
     public WebElement warningMessage_loc;
+
+    @FindBy(xpath = "//*[.='Please enter your email.']")
+    public WebElement warningEmail;
+
+    @FindBy(xpath = "//*[.='Please enter your password!']")
+    public WebElement warningPassword;
 
     public void loginUser(){
         String username= ConfigurationReader.get("userEmail");
