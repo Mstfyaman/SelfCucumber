@@ -10,7 +10,7 @@
       And User should input the information boxes
       Then User should verify the profile updated message
 
-
+    @wip
     Scenario: User should be able to see profile options
       Given User should be on the login page
       When User should input "user11@test.com" and "Test123456"
