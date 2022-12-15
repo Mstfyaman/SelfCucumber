@@ -1,6 +1,8 @@
 package com.krafttech.pages;
 
 import com.krafttech.utilities.ConfigurationReader;
+import com.krafttech.utilities.Driver;
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 
@@ -30,6 +32,11 @@ public class LoginPages extends BasePage{
 
     @FindBy(xpath = "//*[.='Please enter your password!']")
     public WebElement warningPassword;
+
+
+    public String getWarningMessageText(String message){
+        return   Driver.get().findElement(By.xpath("//*[contains(text(),'"+message+"')]")).getText();
+    }
 
     public void loginUser(){
         String username= ConfigurationReader.get("userEmail");

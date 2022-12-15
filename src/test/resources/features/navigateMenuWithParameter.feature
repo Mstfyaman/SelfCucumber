@@ -1,7 +1,7 @@
 
 Feature: Navigate to menu with parameter
 
-
+@wip @run1
   Scenario: user navigates to edit profile
     Given User should be on the login page
     When User should input "Mustafa@gmail.com" and "123456789"
@@ -9,7 +9,7 @@ Feature: Navigate to menu with parameter
     When The user navigates to "Edit Profile" menu
     Then The user should be able to see home name as "Edit User Profile"
 
-
+  @run1
   Scenario: user navigates to Developers menu
     Given User should be on the login page
     When User should input "eddiem@kraft.com" and "eddiem12"
@@ -17,12 +17,13 @@ Feature: Navigate to menu with parameter
     When The user navigates to "Developers" menu
     Then The user should be able to see home name as "Developers"
 
+  @run1
   Scenario: user navigates to Dashboard menu
     Given User should be on the login page
     When User should input "morganfreeman@kraft.com" and "mfreeman"
     Then The user name should be "Morgan Freeman"
     When The user navigates to "Dashboard" menu
-    Then The user should be able to see home name as "Dashboard"
+    Then The user should be able to see home name as "Dashboardd"
 
 
     Scenario Outline: Diffrent user <name>  navigates to <tab> menu
