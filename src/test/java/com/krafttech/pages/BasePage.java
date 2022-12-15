@@ -20,7 +20,7 @@ public abstract class BasePage {
    public WebElement tabMenu;
 
     public void navigateToTab(String tabName){
-        driver=Driver.get();
+        driver= Driver.get();
         driver.findElement(By.xpath("//nav//span[.='"+tabName+"']")).click();
 
     }
